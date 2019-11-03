@@ -8,7 +8,16 @@ export default new Vuex.Store({
     message: "Hello from Vuex",
     count: 0
   },
-  mutations: {},
-  actions: {},
-  modules: {}
+  mutations: {
+    increment: state => {
+      state.count++;
+    }
+  },
+  actions: {
+    doIncrement: context => {
+      context.commit("increment");
+    }
+  },
+  modules: {},
+  getters: {}
 });
