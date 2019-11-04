@@ -10,12 +10,17 @@
 export default {
   methods: {
     add() {
-      this.$store.dispatch("a/doIncrement");
+      this.count++;
     }
   },
   computed: {
-    count() {
-      return this.$store.getters["a/counter"];
+    count: {
+      get() {
+        return this.$store.getters["a/counter"];
+      },
+      set() {
+        this.$store.dispatch("a/doIncrement");
+      }
     }
   }
 };
