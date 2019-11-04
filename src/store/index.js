@@ -3,7 +3,32 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
+const productionA = {
+  namespaced: true,
+  state: {
+    count: 0
+  },
+  mutations: {
+    increment: state => {
+      state.count++;
+    }
+  },
+  actions: {
+    doIncrement: context => {
+      context.commit("increment");
+    }
+  },
+  getters: {
+    counter: state => {
+      return state.count;
+    }
+  }
+};
+
 export default new Vuex.Store({
+  modules: {
+    a: productionA
+  },
   state: {
     message: "Hello from Vuex",
     count: 0,
@@ -39,10 +64,12 @@ export default new Vuex.Store({
       context.commit("removeEvenItems");
     }
   },
-  modules: {},
   getters: {
     items: state => {
       return state.randomItems;
+    },
+    counter: state => {
+      return state.count;
     }
   }
 });
