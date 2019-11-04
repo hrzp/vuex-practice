@@ -3,12 +3,17 @@
     <h1>{{ msg }}</h1>
     <h3>counter: {{counter}}</h3>
     <IncreaseBtn />
+    <NewItemBtn />
+    <hr />
+    <Items />
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
 import IncreaseBtn from "@/components/IncreaseBtn.vue";
+import NewItemBtn from "@/components/NewItemBtn.vue";
+import Items from "@/components/Items.vue";
 export default {
   name: "HelloWorld",
   computed: {
@@ -23,7 +28,9 @@ export default {
     // }
   },
   components: {
-    IncreaseBtn
+    IncreaseBtn,
+    NewItemBtn,
+    Items
   }
 };
 </script>
