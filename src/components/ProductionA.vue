@@ -15,7 +15,7 @@ export default {
   },
   computed: {
     count() {
-      return this.$store.state.a.count;
+      return this.$store.getters["a/counter"];
     }
   }
 };
